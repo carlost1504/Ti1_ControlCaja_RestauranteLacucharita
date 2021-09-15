@@ -1,5 +1,6 @@
 package main;
 
+import Ui.inicio;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -12,7 +13,9 @@ public class Mian extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
+		inicio init=new inicio();
+		System.out.println("entre");
+		init.show();
 		
 	}
 

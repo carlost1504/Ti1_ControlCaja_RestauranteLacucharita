@@ -14,7 +14,7 @@ public class DishData {
 	
 	public DishData() {
 		try {
-			String DataOder_txt="";
+			String DataOder_txt="C:\\Users\\carlo\\eclipse-workspace\\seguimiento_3\\RestauranteLacucharita\\src\\Data\\DishData.txt";
 			File file=new File(DataOder_txt);
 			
 			FileInputStream fis=new FileInputStream(file);

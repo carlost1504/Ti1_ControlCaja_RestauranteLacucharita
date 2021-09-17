@@ -1,6 +1,8 @@
 package model;
 
-public class Employer {
+import java.io.Serializable;
+
+public class Employer implements Serializable {
 
 	public String name;
 	public String id;
@@ -45,4 +47,10 @@ public class Employer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	@Override
+	public String toString() {
+		return "-" + name + "-" + id + "-" + birthday + "-" + password + "\n";
+	}
+	
+	
 }

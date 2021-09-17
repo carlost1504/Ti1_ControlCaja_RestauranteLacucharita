@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Oder {
+public class Oder implements Serializable {
 	
 	public int code;
 	public ArrayList<Dish>dish;
@@ -44,6 +45,10 @@ public class Oder {
 	}
 	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
+	}
+	@Override
+	public String toString() {
+		return "-" + code + "-" + dish + "-" + state + "-" + orderDate + "\n";
 	}
 	
 	

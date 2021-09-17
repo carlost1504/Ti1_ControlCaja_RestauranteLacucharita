@@ -20,4 +20,8 @@ public class modulo_Menu_CreateCombo extends Stage {
 
 	    private Button Bt_home;
 	    
+	    public modulo_Menu_CreateCombo() {
+	    	
+	    }
+	    
 }

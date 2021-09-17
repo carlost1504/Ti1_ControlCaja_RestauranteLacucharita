@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Dish {
+public class Dish implements Serializable {
 
 	public String name;
 	public double price;
@@ -36,6 +37,12 @@ public class Dish {
 	public void setIngredient(ArrayList<Ingredient> ingredient) {
 		this.ingredient = ingredient;
 	}
+	@Override
+	public String toString() {
+		return "-" + name + "-" + price + "-" + ingredient + "\n";
+	}
+	
+	
 	
 	
 	

@@ -1,6 +1,8 @@
 package model;
 
-public class Ingredient {
+import java.io.Serializable;
+
+public class Ingredient implements Serializable {
 
 	public String name;
 	public int amount;
@@ -24,6 +26,10 @@ public class Ingredient {
 	}
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+	@Override
+	public String toString() {
+		return "-" + name + "-" + amount + "\n";
 	}
 	
 	

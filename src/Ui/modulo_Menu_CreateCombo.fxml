@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="Bt_createCombo" layoutX="27.0" layoutY="361.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="Bt_createCombo" layoutX="27.0" layoutY="361.0" mnemonicParsing="false" text="add combo" />
       <Label layoutX="53.0" layoutY="90.0" prefHeight="33.0" prefWidth="61.0" text="Nombre">
          <font>
             <Font size="15.0" />
@@ -42,7 +42,14 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <Button fx:id="Bt_return" layoutX="99.0" layoutY="361.0" mnemonicParsing="false" text="return" />
-      <Button fx:id="Bt_home" layoutX="162.0" layoutY="361.0" mnemonicParsing="false" text="Home" />
+      <Button fx:id="Bt_return" layoutX="126.0" layoutY="361.0" mnemonicParsing="false" text="return" />
+      <Button fx:id="Bt_home" layoutX="190.0" layoutY="361.0" mnemonicParsing="false" text="Home" />
+      <Button fx:id="Bt_addIngrecienteTomenu" layoutX="274.0" layoutY="142.0" mnemonicParsing="false" text="add ingrdiente" />
+      <Label layoutX="357.0" layoutY="90.0" prefHeight="33.0" prefWidth="61.0" text="price">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Tx_PriceComboToMenu" layoutX="409.0" layoutY="94.0" />
    </children>
 </AnchorPane>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -28,11 +28,6 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <SplitMenuButton fx:id="Split_typeEmployer" layoutX="136.0" layoutY="110.0" mnemonicParsing="false" text="SplitMenuButton">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-        </items>
-      </SplitMenuButton>
       <Label layoutX="78.0" layoutY="145.0" text="name">
          <font>
             <Font size="16.0" />
@@ -55,10 +50,11 @@
       </Label>
       <TextField fx:id="tx_nameEmployer" layoutX="137.0" layoutY="145.0" />
       <TextField fx:id="tx_IdEmployer" layoutX="137.0" layoutY="175.0" />
-      <TextField layoutX="137.0" layoutY="210.0" />
       <PasswordField fx:id="tx_passwordEmployer" layoutX="137.0" layoutY="245.0" />
       <Button fx:id="Bt_return" layoutX="212.0" layoutY="306.0" mnemonicParsing="false" text="return" />
       <Button fx:id="Bt_home" layoutX="330.0" layoutY="306.0" mnemonicParsing="false" text="Home" />
       <Button fx:id="bt_addEmployer" layoutX="48.0" layoutY="306.0" mnemonicParsing="false" text="Add Employer" />
+      <ChoiceBox fx:id="List_typeEmployer" layoutX="137.0" layoutY="110.0" prefWidth="150.0" />
+      <DatePicker fx:id="DateBox" layoutX="139.0" layoutY="210.0" prefHeight="25.0" prefWidth="149.0" />
    </children>
 </AnchorPane>

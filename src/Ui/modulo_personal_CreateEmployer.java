@@ -1,9 +1,12 @@
 package Ui;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
@@ -38,6 +41,8 @@ public class modulo_personal_CreateEmployer extends Stage {
     private ChoiceBox<?> List_typeEmployer;
     
     private DatePicker DateBox;
+    
+    public ArrayList<Employer> DataEmployer;
 	    
 	    public modulo_personal_CreateEmployer() {
 	    	try {
@@ -55,12 +60,20 @@ public class modulo_personal_CreateEmployer extends Stage {
 		        bt_addEmployer=(Button)loader.getNamespace().get("bt_addEmployer");
 		        DateBox=(DatePicker)loader.getNamespace().get("DateBox");
 		        
-		        
-		        
 		        List_typeEmployer = new ChoiceBox (FXCollections.observableArrayList ("", "Lb", "units", "L", "lm"));
 		        
-		        Employer=new Employer(getFullScreenExitHint(), getFullScreenExitHint(), getTitle(), getFullScreenExitHint());
-
+		        DataEmployer=loadData();
+		        
+		        Employer p=new Employer(getFullScreenExitHint(), getFullScreenExitHint(), getTitle(), getFullScreenExitHint());
+		        DataEmployer.add(p);
+		        
+		        
+		        returnnFX();
+		        homeFX();
+		        addEmployerr();
+		        
+		        
+		        
 				Scene scene=new Scene(parent,679,600);
 				setScene(scene);
 				
@@ -88,22 +101,49 @@ public class modulo_personal_CreateEmployer extends Stage {
 	    }
 	    public void addEmployerr() {
 	    	bt_addEmployer.setOnAction(Event->{
-	    		
+	    		salveJavaByteCode();
 			});
 	    }
 	    
-	    private void SaveJavaByteCode() {
+	    private void salveJavaByteCode() {
 	    	try {
-	        	File ref = new File("Inventary.temp");
+	        	File ref = new File("jbc.temp");
 				FileOutputStream fos = new FileOutputStream(ref);
 				ObjectOutputStream oos = new ObjectOutputStream(fos);
-				oos.writeObject(inventary);
+				oos.writeObject(DataEmployer);
 				oos.close();	
 				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-	    	
 		}
+	    
+	    public ArrayList<Employer> loadData() {
+	    	try {
+	    		File f =  new File("jbc.temp");
+	    		FileInputStream fis = new FileInputStream(f);
+	    		ObjectInputStream ois = new ObjectInputStream(fis);
+	    		ArrayList<Employer> post = (ArrayList<Employer>) ois.readObject();
+	    		
+	    		return post;
+	    		
+	    	} catch (IOException ex) {
+	    		ex.printStackTrace();
+	    	} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			return null;
+	    	
+	    }
+
+		public ArrayList<Employer> getDataEmployer() {
+			return DataEmployer;
+		}
+
+		public void setDataEmployer(ArrayList<Employer> dataEmployer) {
+			DataEmployer = dataEmployer;
+		}
+	    
+	    
     
 }

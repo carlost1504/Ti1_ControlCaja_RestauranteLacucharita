@@ -7,18 +7,21 @@ public class Dish implements Serializable {
 
 	public String name;
 	public double price;
-	public ArrayList<Ingredient> ingredient;
+	public ArrayList<Inventary> Product;
 	/**
 	 * @param name
 	 * @param price
 	 * @param ingredient
 	 */
-	public Dish(String name, double price, ArrayList<Ingredient> ingredient) {
-		super();
+	
+	
+	public Dish(String name, double price, ArrayList<Inventary> Product) {
 		this.name = name;
 		this.price = price;
-		this.ingredient = ingredient;
+		this.Product = Product;
 	}
+
+	
 	public String getName() {
 		return name;
 	}
@@ -31,16 +34,23 @@ public class Dish implements Serializable {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public ArrayList<Ingredient> getIngredient() {
-		return ingredient;
+
+
+	public ArrayList<Inventary> getProduct() {
+		return Product;
 	}
-	public void setIngredient(ArrayList<Ingredient> ingredient) {
-		this.ingredient = ingredient;
+
+
+	public void setProduct(ArrayList<Inventary> product) {
+		Product = product;
 	}
+
+
 	@Override
 	public String toString() {
-		return "-" + name + "-" + price + "-" + ingredient + "\n";
+		return "Dish [name=" + name + ", price=" + price + ", Product=" + Product + "]";
 	}
+	
 	
 	
 	

@@ -10,17 +10,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="696.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <content>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="675.0">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="686.0">
          <children>
-            <Button fx:id="bt_addAmount" layoutX="431.0" layoutY="378.0" mnemonicParsing="false" text="Add Amount" />
-            <Label layoutX="106.0" layoutY="374.0" prefHeight="33.0" prefWidth="80.0" text="cantidad ">
+            <Button fx:id="bt_addAmount" layoutX="563.0" layoutY="427.0" mnemonicParsing="false" text="Add Amount" />
+            <Label layoutX="406.0" layoutY="386.0" prefHeight="33.0" prefWidth="80.0" text="cantidad ">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="tx_amountPedidos" layoutX="221.0" layoutY="378.0" />
+            <TextField fx:id="tx_amountPedidos" layoutX="497.0" layoutY="390.0" />
             <ImageView fitHeight="28.0" fitWidth="111.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/logo-cucharita-original-sin-fondo-3-Final-.png" />
@@ -31,18 +31,24 @@
                   <Font size="27.0" />
                </font>
             </Label>
-            <Button fx:id="bt_SingnOff" layoutX="563.0" layoutY="614.0" mnemonicParsing="false" text="Sign off" />
-            <Button fx:id="bt_home" layoutX="473.0" layoutY="614.0" mnemonicParsing="false" text="home" />
-            <ScrollPane layoutX="24.0" layoutY="67.0" prefHeight="273.0" prefWidth="628.0">
+            <Button fx:id="bt_SingnOff" layoutX="563.0" layoutY="677.0" mnemonicParsing="false" text="Sign off" />
+            <Button fx:id="bt_home" layoutX="473.0" layoutY="677.0" mnemonicParsing="false" text="home" />
+            <ScrollPane layoutX="27.0" layoutY="77.0" prefHeight="273.0" prefWidth="628.0">
                <content>
                   <TableView fx:id="Tabla_menusAvaliable" prefHeight="272.0" prefWidth="615.0" />
                </content>
             </ScrollPane>
-            <ScrollPane layoutX="26.0" layoutY="414.0" prefHeight="179.0" prefWidth="622.0">
+            <ScrollPane layoutX="27.0" layoutY="484.0" prefHeight="179.0" prefWidth="622.0">
                <content>
                   <TableView fx:id="Tabla_pedidosSelected" prefHeight="199.0" prefWidth="615.0" />
                </content>
             </ScrollPane>
+            <Label layoutX="85.0" layoutY="386.0" prefHeight="33.0" prefWidth="80.0" text="nombre">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tx_nameDish" layoutX="176.0" layoutY="390.0" prefHeight="25.0" prefWidth="220.0" />
          </children>
       </AnchorPane>
    </content>

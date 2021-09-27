@@ -37,7 +37,7 @@ public class modulo_pedidos extends Stage {
 	        Tabla_pedidosSelected=(TableView<?>)loader.getNamespace().get("Tabla_pedidosSelected");
 	        
 	        
-			Scene scene=new Scene(parent,679,600);
+			Scene scene=new Scene(parent,693,611);
 			setScene(scene);
 			init();
 		} catch (Exception e) {

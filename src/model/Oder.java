@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Oder implements Serializable {
 	
-	public int code;
+	public String code;
 	public ArrayList<Dish>dish;
 	public String state;
 	public String orderDate;
@@ -15,17 +15,17 @@ public class Oder implements Serializable {
 	 * @param state
 	 * @param orderDate
 	 */
-	public Oder(int code, ArrayList<Dish> dish, String state, String orderDate) {
+	public Oder(String code, ArrayList<Dish> dish, String state, String orderDate) {
 		super();
 		this.code = code;
 		this.dish = dish;
 		this.state = state;
 		this.orderDate = orderDate;
 	}
-	public int getCode() {
+	public String getCode() {
 		return code;
 	}
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 	public ArrayList<Dish> getDish() {

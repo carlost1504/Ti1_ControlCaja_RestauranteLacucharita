@@ -1,9 +1,12 @@
 package Ui;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +17,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.Employer;
+import model.Ingredient;
 import model.Inventary;
 
 public class modulo_ingredientes_addIngredientes extends Stage {
@@ -29,7 +34,10 @@ public class modulo_ingredientes_addIngredientes extends Stage {
     
     private ChoiceBox<?> List_typeUniditi;
     
-    private Inventary inventary;
+    private TextField tx_Amount;
+    
+    public ArrayList<Inventary>  DataInventary;
+    
     
     public modulo_ingredientes_addIngredientes() {
     	try {
@@ -41,11 +49,15 @@ public class modulo_ingredientes_addIngredientes extends Stage {
 	        tb_return=(Button)loader.getNamespace().get("tb_return");
 	        bt_home=(Button)loader.getNamespace().get("bt_home");
 	        List_typeUniditi=(ChoiceBox<?>)loader.getNamespace().get("List_typeUniditi");
+	        tx_Amount=(TextField)loader.getNamespace().get("tx_Amount");
+	        List_typeUniditi = new ChoiceBox<Object> (FXCollections.observableArrayList ("Km", "Lb", "units", "L", "lm"));
 	        
+	        DataInventary=new ArrayList<>();
 	        
-	        List_typeUniditi = new ChoiceBox (FXCollections.observableArrayList ("Km", "Lb", "units", "L", "lm"));
-	        inventary=new Inventary( tx_NameINgredient.getText(), List_typeUniditi.getValue().toString(), 0);
+	        DataInventary=loadData();
 	        
+	        Inventary inventary=new Inventary( tx_NameINgredient.getText(), List_typeUniditi.getValue().toString(), Integer.parseInt(tx_Amount.getText()) );
+	        DataInventary.add(inventary);
 	    
 			Scene scene=new Scene(parent,750,600);
 			setScene(scene);
@@ -59,13 +71,13 @@ public class modulo_ingredientes_addIngredientes extends Stage {
     }
     
     public void BtAddProduct() {
-    	bt_home.setOnAction(Event->{
+    	bt_addProduct.setOnAction(Event->{
     		SaveJavaByteCode();
 		});
     }
     
     public void BtHome() {
-    	bt_addProduct.setOnAction(Event->{
+    	bt_home.setOnAction(Event->{
     		Modulos p= new Modulos();
     		p.show();
 		});
@@ -83,7 +95,7 @@ public class modulo_ingredientes_addIngredientes extends Stage {
         	File ref = new File("Inventary.temp");
 			FileOutputStream fos = new FileOutputStream(ref);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			oos.writeObject(inventary);
+			oos.writeObject(DataInventary);
 			oos.close();	
 			
 		} catch (IOException e) {
@@ -91,4 +103,32 @@ public class modulo_ingredientes_addIngredientes extends Stage {
 		}
     	
 	}
+    
+    public ArrayList<Inventary> loadData() {
+    	try {
+    		File f =  new File("Inventary.temp");
+    		FileInputStream fis = new FileInputStream(f);
+    		ObjectInputStream ois = new ObjectInputStream(fis);
+    		ArrayList<Inventary> post = (ArrayList<Inventary>) ois.readObject();
+    		
+    		return post;
+    		
+    	} catch (IOException ex) {
+    		ex.printStackTrace();
+    	} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return null;
+    	
+    }
+
+	public ArrayList<Inventary> getDataInventary() {
+		return DataInventary;
+	}
+
+	public void setDataInventary(ArrayList<Inventary> dataInventary) {
+		DataInventary = dataInventary;
+	}
+    
+    
 }

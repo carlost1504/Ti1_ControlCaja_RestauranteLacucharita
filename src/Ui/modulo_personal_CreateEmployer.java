@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-
 import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -64,7 +63,7 @@ public class modulo_personal_CreateEmployer extends Stage {
 		        
 		        DataEmployer=loadData();
 		        
-		        Employer p=new Employer(getFullScreenExitHint(), getFullScreenExitHint(), getTitle(), getFullScreenExitHint());
+		        Employer p=new Employer(tx_nameEmployer.getText(),tx_IdEmployer.getText(),DateBox.getTypeSelector(),tx_passwordEmployer.getText());
 		        DataEmployer.add(p);
 		        
 		        

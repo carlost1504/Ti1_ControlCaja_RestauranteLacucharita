@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Oder implements Serializable {
 	
@@ -15,9 +16,9 @@ public class Oder implements Serializable {
 	 * @param state
 	 * @param orderDate
 	 */
-	public Oder(String code, ArrayList<Dish> dish, String state, String orderDate) {
+	public Oder( ArrayList<Dish> dish, String state, String orderDate) {
 		super();
-		this.code = code;
+		this.code  = UUID.randomUUID().toString();
 		this.dish = dish;
 		this.state = state;
 		this.orderDate = orderDate;

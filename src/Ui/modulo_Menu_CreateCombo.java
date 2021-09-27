@@ -71,7 +71,10 @@ public class modulo_Menu_CreateCombo extends Stage {
 				Scene scene=new Scene(root,600,400);
 				setScene(scene);
 				
-				
+				BtAddDish();
+				BtHome();
+				Btreturn();
+				SaveJavaByteCode();
 				
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -137,5 +140,14 @@ public class modulo_Menu_CreateCombo extends Stage {
 			return null;
 	    	
 	    }
+
+		public ArrayList<Dish> getPlatos() {
+			return platos;
+		}
+
+		public void setPlatos(ArrayList<Dish> platos) {
+			this.platos = platos;
+		}
+	    
 	    
 }
